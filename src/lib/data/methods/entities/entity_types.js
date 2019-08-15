@@ -4,7 +4,7 @@ const models = require('../../models');
 
 const entityTypeMethods = {};
 
-entityTypeMethods.addEntityType = info => new Promise((resolve, reject) => {
+entityTypeMethods.addEntityType = (info) => new Promise((resolve, reject) => {
   models.entities.entity_types.create(info)
     .then((model) => {
       resolve(model);
@@ -45,22 +45,24 @@ entityTypeMethods.updateEntityTypes = (info, data) => new Promise((
     });
 });
 
-entityTypeMethods.deleteEntityTypes = info => new Promise((resolve, reject) => {
-  models.entities.entity_types.destroy({
-    where: { entity_type: info.entity_type },
-  })
-    .then((deleted) => {
-      if (deleted === 0) {
-        reject(new Error("Can't be deleted!"));
-      } else {
-        resolve('deleted');
-      }
+entityTypeMethods.deleteEntityTypes = (info) => new Promise(
+  (resolve, reject) => {
+    models.entities.entity_types.destroy({
+      where: { entity_type: info.entity_type },
     })
-    .catch((err) => {
-      console.log(err);
-      reject(err);
-    });
-});
+      .then((deleted) => {
+        if (deleted === 0) {
+          reject(new Error("Can't be deleted!"));
+        } else {
+          resolve('deleted');
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        reject(err);
+      });
+  },
+);
 entityTypeMethods.deleteAllEntityTypes = () => new Promise((
   resolve,
   reject,

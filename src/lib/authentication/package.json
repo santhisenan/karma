@@ -4,9 +4,9 @@
   "description": "Module to handle authentication.",
   "main": "index.js",
   "dependencies": {
-    "argon2": "^0.19.3",
-    "bluebird": "^3.5.1",
+    "argon2": "^0.24.0",
+    "bluebird": "^3.5.5",
     "data": "file:../data",
-    "jsonwebtoken": "^8.2.2"
+    "jsonwebtoken": "^8.5.1"
   }
 }

@@ -43,7 +43,7 @@ describe('/DELETE people with peopleId ', () => {
         tempVar.push(ret[0]);
         done();
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   });
   it('it should DELETE people given the peopleId', (done) => {
     methods.People.peopleMethods.getAllPeople()

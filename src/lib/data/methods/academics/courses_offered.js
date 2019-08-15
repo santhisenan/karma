@@ -16,7 +16,7 @@ coursesOfferedMethods.getAllCoursesOffered = () => new Promise((resolve,
     });
 });
 
-coursesOfferedMethods.addCoursesOffered = info => new Promise((
+coursesOfferedMethods.addCoursesOffered = (info) => new Promise((
   resolve, reject,
 ) => {
   models.academics.courses_offered.create(info)
@@ -64,7 +64,7 @@ coursesOfferedMethods.deleteAllCoursesOffered = () => new Promise((
     });
 });
 
-coursesOfferedMethods.deleteCoursesOffered = info => new Promise((
+coursesOfferedMethods.deleteCoursesOffered = (info) => new Promise((
   resolve, reject,
 ) => {
   models.academics.courses_offered.destroy({

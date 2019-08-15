@@ -5,7 +5,7 @@ const models = require('../../models');
 
 const newsMethods = {};
 
-newsMethods.insertNewsUsingEntityId = data => new Promise((
+newsMethods.insertNewsUsingEntityId = (data) => new Promise((
   resolve,
   reject,
 ) => {
@@ -42,7 +42,7 @@ newsMethods.insertNewsUsingEntityId = data => new Promise((
     });
 });
 
-newsMethods.insertNewsUsingEntitySlug = data => new Promise((
+newsMethods.insertNewsUsingEntitySlug = (data) => new Promise((
   resolve,
   reject,
 ) => {
@@ -83,7 +83,7 @@ newsMethods.insertNewsUsingEntitySlug = data => new Promise((
     });
 });
 
-newsMethods.getNewsUsingEntitySlug = data => new Promise((
+newsMethods.getNewsUsingEntitySlug = (data) => new Promise((
   resolve,
   reject,
 ) => {

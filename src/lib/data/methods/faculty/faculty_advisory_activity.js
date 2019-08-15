@@ -49,7 +49,7 @@ facultyClassAdvisoryMethods
   });
 
 facultyClassAdvisoryMethods
-  .deleteFacultyClassAdvisoryActivity = info => new Promise((
+  .deleteFacultyClassAdvisoryActivity = (info) => new Promise((
     resolve,
     reject,
   ) => {

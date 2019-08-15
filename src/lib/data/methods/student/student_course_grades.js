@@ -4,7 +4,7 @@ const models = require('../../models');
 const studentCourseGradesMethods = {};
 
 studentCourseGradesMethods
-  .addStudentGrade = info => new Promise((resolve, reject) => {
+  .addStudentGrade = (info) => new Promise((resolve, reject) => {
     models.student.student_course_grades.create(info)
       .then((created) => {
         resolve(created);
@@ -34,7 +34,7 @@ studentCourseGradesMethods
   });
 
 studentCourseGradesMethods
-  .deleteStudentGrade = info => new Promise((resolve, reject) => {
+  .deleteStudentGrade = (info) => new Promise((resolve, reject) => {
     models.student.student_course_grades.destroy({
       where: {
         people_id: info.people_id,

@@ -4,7 +4,7 @@ const models = require('../../models');
 const peopleInfoMethods = {};
 
 // Method to add peopleinfo to the database
-peopleInfoMethods.addPeopleInfo = info => new Promise((resolve, reject) => {
+peopleInfoMethods.addPeopleInfo = (info) => new Promise((resolve, reject) => {
   models.people.people_information.create(info)
     .then((model) => {
       resolve(model);
@@ -57,23 +57,25 @@ peopleInfoMethods.deleteAllPeopleInfo = () => new Promise((resolve, reject) => {
     });
 });
 
-peopleInfoMethods.deletePeopleInfo = info => new Promise((resolve, reject) => {
-  models.people.people_information.destroy({
-    where: {
-      id: info.id,
+peopleInfoMethods.deletePeopleInfo = (info) => new Promise(
+  (resolve, reject) => {
+    models.people.people_information.destroy({
+      where: {
+        id: info.id,
 
-    },
-  }).then((deleted) => {
-    if (deleted === 0) {
-      console.log('error');
-      reject(new Error());
-    } else {
-      resolve(deleted);
-    }
-  }).catch((err) => {
-    reject(err);
-  });
-});
+      },
+    }).then((deleted) => {
+      if (deleted === 0) {
+        console.log('error');
+        reject(new Error());
+      } else {
+        resolve(deleted);
+      }
+    }).catch((err) => {
+      reject(err);
+    });
+  },
+);
 
 
 module.exports = peopleInfoMethods;

@@ -42,7 +42,7 @@ describe('StreamTypes - GetStreamTypes - GET', () => {
         tempVar.push(ret[0]);
         done();
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   });
 
 

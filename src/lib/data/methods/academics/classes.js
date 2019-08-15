@@ -107,7 +107,7 @@ classesMethods.deleteAllClasses = () => new Promise((
     });
 });
 
-classesMethods.deleteClasses = info => new Promise((resolve, reject) => {
+classesMethods.deleteClasses = (info) => new Promise((resolve, reject) => {
   models.academics.classes.destroy({
     where: {
       stream_id: info.stream_id,

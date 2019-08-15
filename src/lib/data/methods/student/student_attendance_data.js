@@ -4,7 +4,7 @@ const models = require('../../models');
 const attendanceDataMethods = {};
 
 attendanceDataMethods
-  .addAttendance = info => new Promise((resolve, reject) => {
+  .addAttendance = (info) => new Promise((resolve, reject) => {
     models.student.student_attendance_data.create(info)
       .then((created) => {
         resolve(created);
@@ -32,7 +32,7 @@ attendanceDataMethods
   });
 
 attendanceDataMethods
-  .deleteAttendance = info => new Promise((resolve, reject) => {
+  .deleteAttendance = (info) => new Promise((resolve, reject) => {
     models.student.student_attendance_data.destroy({
       where: info,
     }).then((deleted) => {

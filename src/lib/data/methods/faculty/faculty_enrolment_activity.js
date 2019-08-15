@@ -41,7 +41,7 @@ facultyEAMethods
             resolve(updated);
           } else {
             reject(new Error());
-          // throw ('err')
+            // throw ('err')
           }
         }).catch((error) => {
           reject(error);
@@ -64,28 +64,29 @@ facultyEAMethods.deleteAllFacultyAcademicEnrolmentActivity = () => new Promise((
     });
 });
 
-facultyEAMethods.deleteFacultyAcademicEnrolmentActivity = info => new Promise((
-  resolve,
-  reject,
-) => {
-  models.faculty.faculty_academic_enrolment_activity.destroy({
-    where: {
-      people_id: info.people_id,
-      course_id: info.course_id,
-      activity: info.activity,
+facultyEAMethods
+  .deleteFacultyAcademicEnrolmentActivity = (info) => new Promise((
+    resolve,
+    reject,
+  ) => {
+    models.faculty.faculty_academic_enrolment_activity.destroy({
+      where: {
+        people_id: info.people_id,
+        course_id: info.course_id,
+        activity: info.activity,
 
-    },
-  }).then((deleted) => {
-    if (deleted === 0) {
-      console.log('error tg');
-      reject(new Error());
-    } else {
-      resolve(deleted);
-    }
-  }).catch((err) => {
-    reject(err);
+      },
+    }).then((deleted) => {
+      if (deleted === 0) {
+        console.log('error tg');
+        reject(new Error());
+      } else {
+        resolve(deleted);
+      }
+    }).catch((err) => {
+      reject(err);
+    });
   });
-});
 
 
 module.exports = facultyEAMethods;

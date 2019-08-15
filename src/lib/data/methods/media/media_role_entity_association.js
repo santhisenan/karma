@@ -30,7 +30,7 @@ mediaEntityAssociationMethods
             resolve(updated);
           } else {
             reject(new Error());
-          // throw ('err')
+            // throw ('err')
           }
         }).catch((error) => {
           reject(error);
@@ -39,20 +39,22 @@ mediaEntityAssociationMethods
   };
 
 mediaEntityAssociationMethods
-  .deleteMediaRoleEntityAssociation = info => new Promise((resolve, reject) => {
-    models.media.media_role_entity_association.destroy({
-      where: { id: info.id },
-    })
-      .then((deleted) => {
-        if (deleted === 0) {
-          reject(new Error());
-        } else {
-          resolve(deleted);
-        }
+  .deleteMediaRoleEntityAssociation = (info) => new Promise(
+    (resolve, reject) => {
+      models.media.media_role_entity_association.destroy({
+        where: { id: info.id },
       })
-      .catch((err) => {
-        console.log(err);
-        reject(err);
-      });
-  });
+        .then((deleted) => {
+          if (deleted === 0) {
+            reject(new Error());
+          } else {
+            resolve(deleted);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          reject(err);
+        });
+    },
+  );
 module.exports = mediaEntityAssociationMethods;

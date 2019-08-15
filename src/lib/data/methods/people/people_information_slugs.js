@@ -177,7 +177,7 @@ const models = require('../../models');
 const peopleInfoSlugsMethods = {};
 
 // Method to add peopleinfo_slugs to the database
-peopleInfoSlugsMethods.addPeopleInfoSlugs = info => new Promise((
+peopleInfoSlugsMethods.addPeopleInfoSlugs = (info) => new Promise((
   resolve, reject,
 ) => {
   models.people.people_information_slugs.create(info)
@@ -236,7 +236,7 @@ peopleInfoSlugsMethods.deleteAllPeopleInfoSlugs = () => new Promise((
     });
 });
 
-peopleInfoSlugsMethods.deletePeopleInfoSlugs = info => new Promise((
+peopleInfoSlugsMethods.deletePeopleInfoSlugs = (info) => new Promise((
   resolve, reject,
 ) => {
   models.people.people_information_slugs.destroy({

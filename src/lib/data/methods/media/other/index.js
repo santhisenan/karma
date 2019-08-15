@@ -5,7 +5,7 @@ const models = require('../../../models');
 
 const otherMethods = {};
 
-otherMethods.getMediaForEntityUsingMediaRoleSlug = data => new Promise((
+otherMethods.getMediaForEntityUsingMediaRoleSlug = (data) => new Promise((
   resolve,
   reject,
 ) => {
@@ -39,7 +39,7 @@ otherMethods.getMediaForEntityUsingMediaRoleSlug = data => new Promise((
     });
 });
 
-otherMethods.addMediaForEntityUsingMediaRoleSlug = data => new Promise((
+otherMethods.addMediaForEntityUsingMediaRoleSlug = (data) => new Promise((
   resolve,
   reject,
 ) => {
@@ -87,7 +87,7 @@ otherMethods.addMediaForEntityUsingMediaRoleSlug = data => new Promise((
     });
 });
 
-otherMethods.updateMediaForEntityUsingMediaRoleSlug = data => new Promise((
+otherMethods.updateMediaForEntityUsingMediaRoleSlug = (data) => new Promise((
   resolve,
   reject,
 ) => {
@@ -141,7 +141,7 @@ otherMethods.updateMediaForEntityUsingMediaRoleSlug = data => new Promise((
     });
 });
 
-otherMethods.getMediaForPeopleUsingMediaRoleSlug = info => new Promise((
+otherMethods.getMediaForPeopleUsingMediaRoleSlug = (info) => new Promise((
   resolve,
   reject,
 ) => {
@@ -183,7 +183,7 @@ otherMethods.getMediaForPeopleUsingMediaRoleSlug = info => new Promise((
     });
 });
 
-otherMethods.insertMediaForPeopleUsingMediaRoleSlug = data => new Promise((
+otherMethods.insertMediaForPeopleUsingMediaRoleSlug = (data) => new Promise((
   resolve,
   reject,
 ) => {

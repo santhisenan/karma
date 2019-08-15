@@ -50,7 +50,7 @@ returnObject.obtainInformation = function (entitySlug, entityInformationSlug) {
   });
 };
 
-returnObject.getEntitiesByType = entityTypeSlug => new Promise((
+returnObject.getEntitiesByType = (entityTypeSlug) => new Promise((
   resolve,
   reject,
 ) => {

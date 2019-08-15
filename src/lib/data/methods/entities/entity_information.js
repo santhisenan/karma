@@ -4,7 +4,7 @@ const models = require('../../models');
 
 const entityInfoMethods = {};
 
-entityInfoMethods.findEntityInfoId = id => new Promise((resolve, reject) => {
+entityInfoMethods.findEntityInfoId = (id) => new Promise((resolve, reject) => {
   models.entities.entity_information.findById(id)
     .then((entityInfo) => {
       resolve(entityInfo);
@@ -14,7 +14,7 @@ entityInfoMethods.findEntityInfoId = id => new Promise((resolve, reject) => {
     });
 });
 
-entityInfoMethods.addEntityInfo = info => new Promise((resolve, reject) => {
+entityInfoMethods.addEntityInfo = (info) => new Promise((resolve, reject) => {
   models.entities.entity_information.create(info)
     .then((entityInfo) => {
       resolve(entityInfo);
@@ -70,7 +70,7 @@ entityInfoMethods.deleteAllEntityInfo = () => new Promise((
 });
 
 entityInfoMethods
-  .deleteEntityInfo = info => new Promise((resolve, reject) => {
+  .deleteEntityInfo = (info) => new Promise((resolve, reject) => {
     models.entities.entity_information.destroy({
       where: { id: info.id },
     })

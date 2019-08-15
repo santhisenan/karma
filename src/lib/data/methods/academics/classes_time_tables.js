@@ -94,7 +94,7 @@ classesTimeTablesMethods.deleteAllClassesTimeTables = () => new Promise((
     });
 });
 
-classesTimeTablesMethods.deleteClassesTimeTables = info => new Promise((
+classesTimeTablesMethods.deleteClassesTimeTables = (info) => new Promise((
   resolve,
   reject,
 ) => {

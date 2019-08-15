@@ -4,7 +4,7 @@ const models = require('../../models');
 
 const streamsOfferedMethods = {};
 
-streamsOfferedMethods.addStreamsOffered = info => new Promise((
+streamsOfferedMethods.addStreamsOffered = (info) => new Promise((
   resolve, reject,
 ) => {
   models.academics.streams_offered.create(info)
@@ -30,7 +30,7 @@ streamsOfferedMethods.getAllStreamsOffered = () => new Promise((
 });
 
 streamsOfferedMethods
-  .getAllStreamsOfferedOfStreamType = streamType => new Promise((
+  .getAllStreamsOfferedOfStreamType = (streamType) => new Promise((
     resolve,
     reject,
   ) => {
@@ -84,7 +84,7 @@ streamsOfferedMethods.deleteAllStreamsOffered = () => new Promise((
       reject(err);
     });
 });
-streamsOfferedMethods.deleteStreamsOffered = info => new Promise((
+streamsOfferedMethods.deleteStreamsOffered = (info) => new Promise((
   resolve,
   reject,
 ) => {

@@ -26,7 +26,7 @@ describe('/PUT/:timeslotid ', () => {
         console.log('added time slots');
         done();
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   });
 
   it('it should UPDATE timeslots given the slotid', (done) => {

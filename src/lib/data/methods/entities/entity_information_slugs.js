@@ -16,7 +16,7 @@ entityInfoSlugsMethods.getAllEntityInfoSlugs = () => new Promise((
     });
 });
 
-entityInfoSlugsMethods.findEntityInfoSlugsById = id => new Promise((
+entityInfoSlugsMethods.findEntityInfoSlugsById = (id) => new Promise((
   resolve, reject,
 ) => {
   models.entities.entity_information_slugs.findById(id)
@@ -28,7 +28,7 @@ entityInfoSlugsMethods.findEntityInfoSlugsById = id => new Promise((
     });
 });
 
-entityInfoSlugsMethods.addEntityInfoSlugs = newEntity => new Promise((
+entityInfoSlugsMethods.addEntityInfoSlugs = (newEntity) => new Promise((
   resolve, reject,
 ) => {
   models.entities.entity_information_slugs.create(newEntity)
@@ -60,7 +60,7 @@ entityInfoSlugsMethods.updateEntityInfoSlugs = (info, data) => new Promise((
     });
 });
 
-entityInfoSlugsMethods.deleteEntityInfoSlugs = info => new Promise((
+entityInfoSlugsMethods.deleteEntityInfoSlugs = (info) => new Promise((
   resolve, reject,
 ) => {
   models.entities.entity_information_slugs.destroy({

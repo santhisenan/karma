@@ -4,7 +4,7 @@ const models = require('../../models');
 const peopleMethods = {};
 
 // Method to add people to the database
-peopleMethods.addPeople = info => new Promise((resolve, reject) => {
+peopleMethods.addPeople = (info) => new Promise((resolve, reject) => {
   models.people.people.create(info)
     .then((model) => {
       resolve(model);
@@ -76,7 +76,7 @@ peopleMethods.deleteAllPeople = () => new Promise((
     });
 });
 
-peopleMethods.deletePeople = info => new Promise((
+peopleMethods.deletePeople = (info) => new Promise((
   resolve,
   reject,
 ) => {

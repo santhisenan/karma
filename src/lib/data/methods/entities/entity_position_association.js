@@ -4,7 +4,7 @@ const models = require('../../models');
 
 const entityPositionMethods = {};
 
-entityPositionMethods.findEntityPositionById = id => new Promise((
+entityPositionMethods.findEntityPositionById = (id) => new Promise((
   resolve, reject,
 ) => {
   models.entities.entity_position_association.findById(id)
@@ -16,7 +16,7 @@ entityPositionMethods.findEntityPositionById = id => new Promise((
     });
 });
 
-entityPositionMethods.addEntityPosition = info => new Promise((
+entityPositionMethods.addEntityPosition = (info) => new Promise((
   resolve, reject,
 ) => {
   models.entities.entity_position_association.create(info)
@@ -76,7 +76,7 @@ entityPositionMethods.deleteAllEntityPosition = () => new Promise((
 });
 
 entityPositionMethods
-  .deleteEntityPosition = info => new Promise((resolve, reject) => {
+  .deleteEntityPosition = (info) => new Promise((resolve, reject) => {
     models.entities.entity_position_association.destroy({
       where: { id: info.id },
     })

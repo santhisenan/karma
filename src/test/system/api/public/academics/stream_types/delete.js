@@ -40,7 +40,7 @@ describe('/DELETE stream_types with id ', () => {
         tempVar.push(ret[0]);
         done();
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   });
   it('it should DELETE streamtypes given the streamid', (done) => {
     methods.Academics.streamTypesMethods.getAllStreamTypes()

@@ -3,7 +3,7 @@ const Promise = require('bluebird');
 const models = require('../../models');
 
 const mediaMethods = {};
-mediaMethods.addMedia = info => new Promise((resolve, reject) => {
+mediaMethods.addMedia = (info) => new Promise((resolve, reject) => {
   models.media.media.create(info)
     .then((newMedia) => {
       resolve(newMedia);
@@ -60,7 +60,7 @@ mediaMethods.deleteAllMedia = () => new Promise((
 });
 
 mediaMethods
-  .deleteMedia = info => new Promise((resolve, reject) => {
+  .deleteMedia = (info) => new Promise((resolve, reject) => {
     models.media.media.destroy({
       where: { id: info.id },
     })

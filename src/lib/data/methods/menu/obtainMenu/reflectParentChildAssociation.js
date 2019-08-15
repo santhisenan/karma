@@ -10,12 +10,12 @@ const reflectParentChildAssociation = function (
     try {
       const childElements = _.remove(
         menuElements,
-        menuElement => menuElement.id === childId,
+        (menuElement) => menuElement.id === childId,
       );
       const childElement = childElements[0];
       const parentElement = _.find(
         menuElements,
-        menuElement => menuElement.id === parentId,
+        (menuElement) => menuElement.id === parentId,
       );
       if (parentElement.children) {
         parentElement.children.push(childElement);

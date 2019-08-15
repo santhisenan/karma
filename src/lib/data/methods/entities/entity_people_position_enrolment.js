@@ -4,7 +4,7 @@ const models = require('../../models');
 
 const entityPeoplePosEnrolMethods = {};
 
-entityPeoplePosEnrolMethods.findEntityPeoplePosEnrolById = id => new Promise((
+entityPeoplePosEnrolMethods.findEntityPeoplePosEnrolById = (id) => new Promise((
   resolve, reject,
 ) => {
   models.entities.entity_people_position_enrolment.findById(id)
@@ -16,7 +16,7 @@ entityPeoplePosEnrolMethods.findEntityPeoplePosEnrolById = id => new Promise((
     });
 });
 
-entityPeoplePosEnrolMethods.addEntityPeoplePosEnrol = info => new Promise((
+entityPeoplePosEnrolMethods.addEntityPeoplePosEnrol = (info) => new Promise((
   resolve, reject,
 ) => {
   models.entities.entity_people_position_enrolment.create(info)
@@ -78,7 +78,7 @@ entityPeoplePosEnrolMethods.deleteAllEntityPeoplePosEnrol = () => new Promise((
 });
 
 entityPeoplePosEnrolMethods
-  .deleteEntityPeoplePosEnrol = info => new Promise((resolve, reject) => {
+  .deleteEntityPeoplePosEnrol = (info) => new Promise((resolve, reject) => {
     models.entities.entity_people_position_enrolment.destroy({
       where: { id: info.id },
     })

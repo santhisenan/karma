@@ -38,7 +38,7 @@ describe('/DELETE time_slots with id ', () => {
         tempVar.push(ret[0]);
         done();
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   });
   it('it should DELETE time_slots given the timeSlotId', (done) => {
     methods.Academics.timeSlotsMethods.getAllTimeSlots()

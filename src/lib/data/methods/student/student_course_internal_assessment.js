@@ -3,7 +3,7 @@ const models = require('../../models');
 
 const internalAssessmentMethods = {};
 internalAssessmentMethods
-  .createInternalAssessment = info => new Promise((resolve, reject) => {
+  .createInternalAssessment = (info) => new Promise((resolve, reject) => {
     models.student.student_course_internal_assessment.create(info)
       .then((created) => {
         resolve(created);
@@ -31,7 +31,7 @@ internalAssessmentMethods
   });
 
 internalAssessmentMethods
-  .deleteInternalAssessment = info => new Promise((resolve, reject) => {
+  .deleteInternalAssessment = (info) => new Promise((resolve, reject) => {
     models.student.student_course_internal_assessment.destroy({ where: info })
       .then((deleted) => {
         if (deleted > 0) {

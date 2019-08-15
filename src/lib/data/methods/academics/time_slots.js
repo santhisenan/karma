@@ -4,7 +4,7 @@ const models = require('../../models');
 
 const timeSlotsMethods = {};
 
-timeSlotsMethods.addTimeSlots = info => new Promise((resolve, reject) => {
+timeSlotsMethods.addTimeSlots = (info) => new Promise((resolve, reject) => {
   models.academics.time_slots.create(info)
     .then((newTimeSlot) => {
       resolve(newTimeSlot);
@@ -60,7 +60,7 @@ timeSlotsMethods.deleteAllTimeSlots = () => new Promise((
       reject(err);
     });
 });
-timeSlotsMethods.deleteTimeSlots = info => new Promise((resolve, reject) => {
+timeSlotsMethods.deleteTimeSlots = (info) => new Promise((resolve, reject) => {
   models.academics.time_slots.destroy({
     where: {
       id: info.id,

@@ -4,7 +4,7 @@ const models = require('../../models');
 const classEnrollmentActivity = {};
 
 classEnrollmentActivity
-  .createActivity = info => new Promise((resolve, reject) => {
+  .createActivity = (info) => new Promise((resolve, reject) => {
     models.student.student_course_enrolment_activity.create(info)
       .then((created) => {
         resolve(created);
@@ -32,7 +32,7 @@ classEnrollmentActivity
   });
 
 classEnrollmentActivity
-  .deleteActivity = info => new Promise((resolve, reject) => {
+  .deleteActivity = (info) => new Promise((resolve, reject) => {
     models.student.student_course_enrolment_activity.destroy({
       where: info,
     }).then((deleted) => {

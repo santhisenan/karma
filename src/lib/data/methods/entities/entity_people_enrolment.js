@@ -4,7 +4,7 @@ const models = require('../../models');
 
 const entityPeopleEnrolMethods = {};
 
-entityPeopleEnrolMethods.findEntityPeopleEnrolById = id => new Promise((
+entityPeopleEnrolMethods.findEntityPeopleEnrolById = (id) => new Promise((
   resolve, reject,
 ) => {
   models.entities.entity_people_enrollment.findById(id)
@@ -16,7 +16,7 @@ entityPeopleEnrolMethods.findEntityPeopleEnrolById = id => new Promise((
     });
 });
 
-entityPeopleEnrolMethods.addEntityPeopleEnrol = info => new Promise((
+entityPeopleEnrolMethods.addEntityPeopleEnrol = (info) => new Promise((
   resolve, reject,
 ) => {
   models.entities.entity_people_enrollment.create(info)
@@ -76,7 +76,7 @@ entityPeopleEnrolMethods.deleteAllEntityPeopleEnrol = () => new Promise((
 });
 
 entityPeopleEnrolMethods
-  .deleteEntityPeopleEnrol = info => new Promise((resolve, reject) => {
+  .deleteEntityPeopleEnrol = (info) => new Promise((resolve, reject) => {
     models.entities.entity_people_enrollment.destroy({
       where: { id: info.id },
     })

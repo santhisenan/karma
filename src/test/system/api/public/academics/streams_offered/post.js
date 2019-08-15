@@ -68,7 +68,7 @@ describe('Post stream types - POST', () => {
                       console.log(err);
                     });
                 })
-                .catch(err => console.log(err));
+                .catch((err) => console.log(err));
             })
             .catch((err) => {
               console.log(err);

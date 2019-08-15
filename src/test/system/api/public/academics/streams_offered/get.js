@@ -84,7 +84,7 @@ describe('StreamsOffered - GetStreamsOffered - GET', () => {
             console.log(err);
           });
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   });
 
 

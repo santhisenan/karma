@@ -85,7 +85,7 @@ describe('/DELETE stream_types with id ', () => {
             console.log(err);
           });
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   });
   it('it should DELETE streamsoffered given the streamid', (done) => {
     methods.Academics.streamsOfferedMethods.getAllStreamsOffered()

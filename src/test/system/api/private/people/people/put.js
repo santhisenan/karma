@@ -43,7 +43,7 @@ describe('/PUT/:peopleId ', () => {
         tempVar.push(ret[0]);
         done();
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   });
 
   it('it should UPDATE people given the peopleId', (done) => {

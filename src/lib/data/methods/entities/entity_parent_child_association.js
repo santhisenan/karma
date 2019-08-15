@@ -4,7 +4,7 @@ const models = require('../../models');
 
 const entityParentChildMethods = {};
 
-entityParentChildMethods.findEntityParentChildById = id => new Promise((
+entityParentChildMethods.findEntityParentChildById = (id) => new Promise((
   resolve, reject,
 ) => {
   models.entities.entity_parent_child_association.findById(id)
@@ -16,7 +16,7 @@ entityParentChildMethods.findEntityParentChildById = id => new Promise((
     });
 });
 
-entityParentChildMethods.addEntityParentChild = info => new Promise((
+entityParentChildMethods.addEntityParentChild = (info) => new Promise((
   resolve, reject,
 ) => {
   models.entities.entity_parent_child_association.create(info)
@@ -76,7 +76,7 @@ entityParentChildMethods.deleteAllEntityParentChild = () => new Promise((
 });
 
 entityParentChildMethods
-  .deleteEntityParentChild = info => new Promise((resolve, reject) => {
+  .deleteEntityParentChild = (info) => new Promise((resolve, reject) => {
     models.entities.entity_parent_child_association.destroy({
       where: { id: info.id },
     })

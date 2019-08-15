@@ -15,7 +15,7 @@ eventMethods.getAllEvents = () => new Promise((resolve, reject) => {
     });
 });
 
-eventMethods.findEventById = id => new Promise((resolve, reject) => {
+eventMethods.findEventById = (id) => new Promise((resolve, reject) => {
   models.events.events.findById(id)
     .then((events) => {
       if (events !== null) resolve(events);
@@ -26,7 +26,7 @@ eventMethods.findEventById = id => new Promise((resolve, reject) => {
     });
 });
 
-eventMethods.createNewEvent = data => new Promise((resolve, reject) => {
+eventMethods.createNewEvent = (data) => new Promise((resolve, reject) => {
   models.events.events.create(data)
     .then((event) => {
       if (event !== null) resolve(event);
